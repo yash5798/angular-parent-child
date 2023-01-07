@@ -1,0 +1,12 @@
+<fieldset>
+  <legend>STUDENT</legend>
+  <div class="control">
+    <label>Child Input</label>&nbsp;
+    <input type="text" [(ngModel)]="childControl" placeholder="Enter data" />
+    &nbsp;
+    <button (click)="sendParent()" [disabled]="!childControl">Send</button>
+  </div>
+
+  <br />
+  <div *ngIf="parentData">Received Data : {{ parentData }}</div>
+</fieldset>

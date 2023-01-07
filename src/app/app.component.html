@@ -1,0 +1,23 @@
+<h3>
+  Parent => Child
+  <br />AND <br />Child <= Parent
+  <br />
+  Communication Example
+</h3>
+
+<fieldset>
+  <legend>PARENT</legend>
+  <div class="control">
+    <label>Parent Input</label>&nbsp;
+    <input type="text" [(ngModel)]="parentControl" placeholder="Enter data" />
+    &nbsp;
+    <button (click)="sendChild()" [disabled]="!parentControl">Send</button>
+  </div>
+  <br />
+  <div *ngIf="childData">Received Data : {{ childData }}</div>
+</fieldset>
+<br />
+
+<div style="margin-top:5em">
+  <hello (childEvent)="childData = $event" [parentData]="dataToSend"></hello>
+</div>
